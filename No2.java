@@ -125,6 +125,7 @@ class Solution2 {
     }
 }
 
+/*
 class ListNode {
     int val;
     ListNode next;
@@ -132,4 +133,4 @@ class ListNode {
     ListNode(int x) {
         val = x;
     }
-}
+}*/
