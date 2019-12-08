@@ -2,88 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87631891-b990-40ff-93ad-9b54561fbbee" name="Default Changelist" comment="commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataStructure/CompressFileByHuffmanTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataStructure/Graph/Graph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataStructure/quickSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/BackTrack/No17.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/BackTrack/No22.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/BackTrack/No40.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/BackTrack/No46.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/BackTrack/No47.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/BackTrack/No60.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/BinarySearch/No33.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/BinarySearch/No34.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/BinarySearch/No50.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/BinarySearch/No69.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/BinarySearch/No81.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DP/No10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DP/No53.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DP/No62.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DP/No63.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DP/No64.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DP/No70.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DoublePointer/No16.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DoublePointer/No19.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DoublePointer/No26.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DoublePointer/No42.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DoublePointer/No75.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DoublePointer/No80.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/DoublePointer/no27.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/HashTable/No15.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/HashTable/No18.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/LinkedList/No141.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/LinkedList/No25.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/LinkedList/No61.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/LinkedList/No82.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/LinkedList/No83.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/LinkedList/No86.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/LinkedList/No92.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Math/No31.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No21.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No23.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No24.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No29.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No32.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No34.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No35.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No36.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No37.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No39.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No5213.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No5214.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/No5255.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/SlidingWindow/No3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/String/No30.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No100.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No101.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No102.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No103.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No104.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No105.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No106.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No107.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No94.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No95.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No96.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practice/leetcode/Tree/No98.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/kh/Solution1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/practice/leetcode/ListNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/practice/leetcode/ListNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/practice/leetcode/No11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/practice/leetcode/No17.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/practice/leetcode/No4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/practice/leetcode/No4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/practice/leetcode/No46.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/practice/leetcode/Solution11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/practice/leetcode/Solution3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/practice/leetcode/Solution3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/practice/leetcode/Solution4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/practice/leetcode/Solution4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practice/leetcode/No11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practice/leetcode/DoublePointer/No11.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practice/leetcode/No17.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practice/leetcode/No2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practice/leetcode/No2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practice/leetcode/No3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practice/leetcode/DoublePointer/No3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practice/leetcode/No4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practice/leetcode/No4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practice/leetcode/No46.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/practice/leetcode/No32.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practice/leetcode/No32.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -117,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/practice/leetcode/No32.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            <state relative-caret-position="152">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -428,7 +348,7 @@
       <workItem from="1575460548005" duration="6419000" />
       <workItem from="1575512290060" duration="17000" />
       <workItem from="1575513161513" duration="4344000" />
-      <workItem from="1575797934176" duration="288000" />
+      <workItem from="1575797934176" duration="1538000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1569757416613</created>
@@ -451,11 +371,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569758044563</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit">
+      <created>1575798242495</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575798242495</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388950000" />
+    <option name="totallyTimeSpent" value="390200000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,10 +394,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.34844193" visible="true" weight="0.18364611" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.34844193" visible="true" weight="0.18364611" />
       <window_info id="Structure" order="1" sideWeight="0.6515581" side_tool="true" weight="0.1735925" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1157,8 +1084,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/practice/leetcode/No32.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state relative-caret-position="152">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
