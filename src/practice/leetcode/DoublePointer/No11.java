@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.DoublePointer;
 
 public class No11 {
     public static void main(String[] args) {
