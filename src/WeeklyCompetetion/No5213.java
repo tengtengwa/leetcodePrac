@@ -1,4 +1,4 @@
-package practice.leetcode;
+package WeeklyCompetetion;
 
 public class No5213 {
     public static void main(String[] args) {
