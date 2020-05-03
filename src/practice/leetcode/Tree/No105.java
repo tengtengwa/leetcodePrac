@@ -68,3 +68,25 @@ class Solution105 {
         return root;
     }
 }
+
+//另一种递归写法
+class Solution {
+    public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
+        return backTrack(pre, 0, pre.length - 1, in, 0, in.length - 1);
+    }
+
+    TreeNode backTrack(int[] pre, int preStart, int preEnd, int[] in, int inStart, int inEnd) {
+        if (preStart > preEnd || inStart > inEnd)   //递归结束条件
+            return null;
+        TreeNode node = new TreeNode(pre[preStart]);    //当前根节点
+        for (int index = inStart; index <= inEnd; index++) {    //前序当前元素在中序中的下标，范围是[inStart, inEnd]
+            if (in[index] == pre[preStart]) {           //遍历中序中的元素和当前前序节点的值相比较
+                //下面的边界条件尤其需要注意，稍有不慎就会出错
+                //递归左子树时前序的范围也可以是[preStart+1, preEnd]，但右子树必须是[preStart + index - inStart + 1, inEnd]
+                node.left = backTrack(pre, preStart + 1, preStart + index - inStart, in, inStart, index - 1);
+                node.right = backTrack(pre, preStart + index - inStart + 1, preEnd, in, index + 1, inEnd);
+            }
+        }
+        return node;
+    }
+}
