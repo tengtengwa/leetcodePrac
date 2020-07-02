@@ -1,13 +1,13 @@
 package practice.leetcode.offer;
 
-public class T111 {
+public class T10 {
     public static void main(String[] args) {
-        SolutionT111 s = new SolutionT111();
+        SolutionT10 s = new SolutionT10();
         s.NumberOf1(11);
     }
 }
 
-class SolutionT111 {
+class SolutionT10 {
     public int NumberOf1(int n) {
         int num = 0;
         if (n == 0) return 0;
