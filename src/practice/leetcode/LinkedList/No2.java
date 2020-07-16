@@ -1,6 +1,4 @@
-package practice.leetcode;
-
-import java.util.HashMap;
+package practice.leetcode.LinkedList;
 
 public class No2 {
     public static void main(String[] args) {
@@ -102,8 +100,7 @@ class Solution2 {
 }
 
 
-/*
-class ListNode {
+/*class ListNode {
     int val;
     ListNode next;
 
