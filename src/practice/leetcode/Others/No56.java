@@ -14,7 +14,7 @@ public class No56 {
 class Solution56 {
     /**
      * 经典合并区间问题，思路：先排序，再根据条件进行筛选。
-     * 时间：O(n)，空间：O(n)
+     * 时间：O(nlogn)，空间：O(logn) 即为排序所需要的空间复杂度。    注意，排序的nlogn时间要多于n
      */
     public int[][] merge(int[][] intervals) {
         if (intervals == null || intervals.length == 0) {
