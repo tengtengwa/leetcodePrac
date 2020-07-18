@@ -3,15 +3,15 @@ package practice.leetcode.SlidingWindow;
 import java.util.HashMap;
 import java.util.Map;
 
-public class No72 {
+public class No76 {
     public static void main(String[] args) {
-        Solution72 s = new Solution72();
+        Solution76 s = new Solution76();
         s.minWindow("ADOBECODEBANC", "ABC");
     }
 }
 
 
-class Solution72 {
+class Solution76 {
     /**
      * 看到类似 “两个字符串xxx，求最小子串”，一般就是要使用滑动窗口来解的。滑动窗口，说白了就是双指针，没有多么高大上。
      * 这道题大致思路：
