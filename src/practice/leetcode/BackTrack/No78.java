@@ -22,9 +22,9 @@ class Solution78 {
 
     private void backTrack(int i, int[] nums, List<List<Integer>> ans, ArrayList<Integer> tem) {
         ans.add(new ArrayList<>(tem));
-        for (int j = i; j < nums.length; j++) {
-            tem.add(nums[j]);
-            backTrack(j + 1, nums, ans, tem);
+        for (int index = i; index < nums.length; index++) {
+            tem.add(nums[index]);
+            backTrack(index + 1, nums, ans, tem);
             tem.remove(tem.size() - 1);
         }
     }

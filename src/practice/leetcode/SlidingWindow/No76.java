@@ -52,4 +52,7 @@ class Solution76 {
         }
         return start == -1 ? "" : s.substring(start, start + min + 1);  //注意,最后substring方法取的范围为[left,right)
     }
+
+
+
 }
