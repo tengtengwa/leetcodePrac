@@ -5,67 +5,75 @@ import java.util.*;
 public class No47 {
     public static void main(String[] args) {
         Solution47 solution47 = new Solution47();
-        solution47.permuteUnique(new int[]{2, 2, 1, 1});
+        solution47.permuteUnique(new int[]{2, 1, 1});
 
     }
 }
 
 class Solution47 {
-    List<List<Integer>> lists = new ArrayList<>();
 
+    /**
+     * 46题官方解法对应的版本，在它的基础上在for循环中加了一个if来剪枝
+     */
     public List<List<Integer>> permuteUnique(int[] nums) {
-        ArrayList<Integer> list = new ArrayList<>();
+        List<List<Integer>> ans = new ArrayList<>();
+        ArrayList<Integer> tem = new ArrayList<>();
         Arrays.sort(nums);
         for (int num : nums) {
-            list.add(num);
+            tem.add(num);
         }
-        DFS(nums, 0, list);
-        return lists;
+        DFS(ans, nums, 0, tem);
+        return ans;
     }
 
-    private void DFS(int[] nums, int index, ArrayList<Integer> list) {
+    private void DFS(List<List<Integer>> ans, int[] nums, int index, ArrayList<Integer> tem) {
         if (index == nums.length) {
-            lists.add(new ArrayList<>(list));
+            ans.add(new ArrayList<>(tem));
         } else {
-            DFS(nums, index + 1, list);
+            DFS(ans, nums, index + 1, tem);
             for (int i = 0; i < nums.length; i++) {
-                if (list.get(index).equals(list.get(i))) {
+                if (tem.get(index).equals(tem.get(i))) {
                     break;
                 }
-                Collections.swap(list, i, index);
-                DFS(nums, index + 1, list);
-                Collections.swap(list, i, index);
+                Collections.swap(tem, i, index);
+                DFS(ans, nums, index + 1, tem);
+                Collections.swap(tem, i, index);
             }
         }
-
     }
 
+
+    /**
+     * 这个解法是在46题第二种解法的基础上来的，仅仅增加了backtrack函数中的一个if语句来剪枝，比较容易理解。
+     * 时间复杂度：O(N×N!)，这里 N 为数组的长度。
+     * 空间复杂度：O(N×N!)。
+     */
 /*    public List<List<Integer>> permuteUnique(int[] nums) {
-        if(nums == null || nums.length == 0) return Collections.EMPTY_LIST;
-        int n = nums.length;
-        List<List<Integer>> res = new ArrayList<>();
+        List<List<Integer>> ans = new ArrayList<>();
         Arrays.sort(nums);
-        helper(nums, n, 0, res);
-        return res;
+        int[] flag = new int[nums.length];
+        backTrack(ans, nums, 0, new ArrayList<>(), flag);
+        return ans;
     }
-    void helper(int[] nums, int n, int k, List<List<Integer>> res){
-        if(k == n){
-            List<Integer> l = new ArrayList<>(n);
-            for(int num : nums) l.add(num);
-            res.add(l);
+
+    private void backTrack(List<List<Integer>> ans, int[] nums, int depth, List<Integer> tem, int[] flag) {
+        if (depth == nums.length) {
+            ans.add(new ArrayList<>(tem));
             return;
         }
-        helper(nums, n, k + 1, res);
-        for(int i = 0; i < k; i++){
-            if(nums[i] == nums[k]) break;
-            swap(nums, i, k);
-            helper(nums, n, k + 1, res);
-            swap(nums, i, k);
+        for (int index = 0; index < nums.length; index++) {
+            if (flag[index] == 1) {     //跳过数组中已经选过的数
+                continue;
+            }
+            if (index > 0 && nums[index] == nums[index - 1] && flag[index - 1] == 0) {
+                continue;
+            }
+            tem.add(nums[index]);
+            flag[index] = 1;
+            backTrack(ans, nums, depth + 1, tem, flag);
+            flag[index] = 0;
+            tem.remove(tem.size() - 1);
         }
-    }
-    void swap(int[] nums, int i, int j){
-        int tmp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tmp;
     }*/
+
 }
