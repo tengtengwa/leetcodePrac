@@ -7,7 +7,7 @@ import java.util.List;
 public class No90 {
     public static void main(String[] args) {
         Solution90 s = new Solution90();
-        s.subsetsWithDup(new int[]{1, 2, 2});
+        s.subsetsWithDup(new int[]{2, 2, 2, 2, 2});
     }
 }
 
@@ -41,7 +41,7 @@ class Solution90 {
     /**
      * 解法二：回溯+剪枝，回溯过程中跳过和上一个元素相同的元素。
      */
-    public List<List<Integer>> subsetsWithDup(int[] nums) {
+/*    public List<List<Integer>> subsetsWithDup(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> ans = new ArrayList<>();
         backTrack(0, ans, nums, new ArrayList<>());
@@ -58,6 +58,43 @@ class Solution90 {
             backTrack(index + 1, ans, nums, tem);       //注意！下一层的start为 index+1
             tem.remove(tem.size() - 1);
         }
-    }
+    }*/
 
+
+    /**
+     * 对78题改进的位运算方法，难点在于去重：
+     * 2 2 2 2 2
+     * 1 1 0 0 0 -> [  2 2       ]
+     * 1 0 1 0 0 -> [  2 2       ]
+     * 0 1 1 0 0 -> [  2 2       ]
+     * 0 1 0 1 0 -> [  2 2       ]
+     * 0 0 0 1 1 -> [  2 2       ]
+     * 思路之一：凡是每一位 1的前面（右边）出现0的子集情况一律删除
+     *
+     */
+    public List<List<Integer>> subsetsWithDup(int[] num) {
+        Arrays.sort(num);           //仍然需要先排序
+        List<List<Integer>> ans = new ArrayList<>();
+        for (int i = 0; i < 1 << num.length; i++) {
+            List<Integer> list = new ArrayList<>();
+            boolean illegal = false;
+            for (int j = 0; j < num.length; j++) {
+                //当前位是 1
+                if ((i >> j & 1) == 1) {        //不要忘了和1与
+                    //当前是重复数字，并且前一位是 0，跳过这种情况
+                    if (j > 0 && num[j] == num[j - 1] && (i >> (j - 1) & 1) == 0) {    //不要忘了和1与
+                        illegal = true;
+                        break;
+                    } else {
+                        list.add(num[j]);
+                    }
+                }
+            }
+            if (!illegal) {         //内循环结束，也就是这个子集的数字全部添加进tem列表后再加入ans集合
+                ans.add(list);
+            }
+
+        }
+        return ans;
+    }
 }
