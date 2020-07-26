@@ -1,4 +1,4 @@
-package practice.leetcode.DoublePointer;
+package practice.leetcode.Stack;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
