@@ -1,4 +1,4 @@
-package practice.leetcode.BackTrack;
+package practice.leetcode.Recursion;
 
 public class No37 {
     public static void main(String[] args) {

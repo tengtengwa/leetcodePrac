@@ -1,7 +1,6 @@
-package practice.leetcode.BackTrack;
+package practice.leetcode.Recursion;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class No46 {
