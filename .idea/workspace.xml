@@ -359,7 +359,7 @@
       <workItem from="1596036645195" duration="325000" />
       <workItem from="1596071014871" duration="1910000" />
       <workItem from="1596073923359" duration="6375000" />
-      <workItem from="1596158656398" duration="8836000" />
+      <workItem from="1596158656398" duration="9216000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1569757416613</created>
@@ -557,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596162521977</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="128最大连续序列两类解法">
+      <created>1596167857425</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1596167857425</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -599,7 +606,8 @@
     <MESSAGE value="124最大路径和，递归解法，敢敢单单" />
     <MESSAGE value="124最大路径和，递归解法，敢敢单单;将包名由回溯改为递归" />
     <MESSAGE value="69求非负整数x的平方根，主要是二分解法" />
-    <option name="LAST_COMMIT_MESSAGE" value="69求非负整数x的平方根，主要是二分解法" />
+    <MESSAGE value="128最大连续序列两类解法" />
+    <option name="LAST_COMMIT_MESSAGE" value="128最大连续序列两类解法" />
   </component>
   <component name="WindowStateProjectService">
     <state x="651" y="274" key="#Notifications" timestamp="1592042509872">
@@ -622,10 +630,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="310" y="117" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1595559946478" />
-    <state x="605" y="18" width="802" height="768" key="CommitChangelistDialog2" timestamp="1596162520833">
+    <state x="612" y="32" width="802" height="768" key="CommitChangelistDialog2" timestamp="1596167855879">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="605" y="18" width="802" height="768" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596162520833" />
+    <state x="612" y="32" width="802" height="768" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596167855879" />
     <state width="501" height="466" key="DebuggerActiveHint" timestamp="1596166673123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -666,10 +674,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1595571830730" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1596162523568">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1596167875169">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1596162523568" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1596167875169" />
     <state x="508" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1592267649177">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

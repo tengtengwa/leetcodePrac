@@ -1,4 +1,4 @@
-package practice.leetcode.Stack;
+package practice.leetcode.StackAndQueue;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

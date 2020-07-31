@@ -1,8 +1,6 @@
-package practice.leetcode.Stack;
+package practice.leetcode.StackAndQueue;
 
-import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.Deque;
 
 public class No85 {
     public static void main(String[] args) {
