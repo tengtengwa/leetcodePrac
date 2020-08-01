@@ -48,7 +48,7 @@ class Solution128 {
      *
      * 时间、空间：O(N)
      */
-    public int longestConsecutive(int[] nums) {
+    /*public int longestConsecutive(int[] nums) {
         if (nums.length == 0) return 0;
 
         int max = 1;
@@ -65,6 +65,28 @@ class Solution128 {
             max = Math.max(max, r - n + 1); // 记录区间 [v, r] 长度
         }
         return max;
-    }
+    }*/
 
+
+    /**
+     * 解法三：使用Map
+     * 思路：使用一个Map保存以每个元素为起始的一个区间，在遍历时通过map中前面已知的右边界来更新当前元素的右边界，然后更新最大值
+     * 时间、空间：O(N),时间和使用优先队列差不多
+     */
+    public int longestConsecutive(int[] nums) {
+        if (nums.length == 0) return 0;
+
+        Map<Integer, Integer> map = new HashMap<>(); // 记录区间 [v, r]
+        for (int v : nums) map.put(v, v);
+
+        int max = 1;
+        for (int num : nums) {
+            int r = num;
+            while (map.containsKey(r + 1))
+                r = map.get(r + 1);     //利用前面已知的右边界，快速找到当前需要的右边界，也就相当于剪枝，比不剪枝快很多
+            map.put(num, r);
+            max = Math.max(max, r - num + 1);
+        }
+        return max;
+    }
 }
