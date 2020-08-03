@@ -23,6 +23,7 @@ class LRUCache {
      * 题目：LRU缓存
      * 解法一：直接使用LinkedHashMap，没有什么意思
      * 解法二：使用一个双向链表和一个HashMap来实现LinkedHashMap的功能，注意将增删节点的方法抽出来即可。
+     * 双向链表不自己实现，使用一个LinkedList应该也可以
      */
     class DLinkedList {
         private int key;
