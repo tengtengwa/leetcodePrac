@@ -103,13 +103,13 @@ class Solution215 {
         return nums[0];
     }
 
-    public void buildMaxHeap(int[] a, int heapSize) {
+    private void buildMaxHeap(int[] a, int heapSize) {
         for (int i = heapSize / 2; i >= 0; --i) {
             maxHeapify(a, i, heapSize);
         }
     }
 
-    public void maxHeapify(int[] a, int i, int heapSize) {
+    private void maxHeapify(int[] a, int i, int heapSize) {
         //l、r为索引为i的节点的“左右子树”
         int l = (i << 1) + 1, r = (i << 1) + 2, largest = i;
         if (l < heapSize && a[l] > a[largest]) {
