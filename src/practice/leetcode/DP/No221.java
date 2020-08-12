@@ -43,6 +43,7 @@ class Solution221 {
                 if (matrix[i][j] == '1') {
                     maxSide = Math.max(maxSide, 1);
                     int curMaxside = Math.min(rows - i, columns - j);
+                    //从i,j开始向右下角扩张，扩张的最大行列数为curMaxside
                     for (int k = 1; k < curMaxside; k++) {
                         //判断新增的一行一列是否都为‘1’
                         boolean flag = true;
@@ -56,7 +57,7 @@ class Solution221 {
                             }
                         }
                         if (flag) {
-                            maxSide = Math.max(maxSide, k + 1); //和k+1取较大
+                            maxSide = Math.max(maxSide, k + 1); //正方形每次边长扩张1
                         } else {
                             break;
                         }
