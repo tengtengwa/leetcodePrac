@@ -62,12 +62,33 @@ class Solution215 {
         swap(nums, j, left);
         return j;
     }
+*/
 
-    private void swap(int[] nums, int i, int j) {
-        int tem = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tem;
-    }*/
+
+    public int findKthLargest(int[] nums, int k) {
+        int left = 0, right = nums.length - 1, target = nums.length - k;
+        while (left <= right) {     //防止只有一个元素
+            int tem = (right + left) / 2;
+            int pivot = nums[tem];
+            swap(nums, left, tem);
+            int j = left;
+
+            for (int i = left + 1; i <= right; i++) {
+                if (nums[i] < pivot) {
+                    swap(nums, i, ++j);
+                }
+            }
+            swap(nums, left, j);
+            if (j == target) {
+                return nums[j];
+            } else if (j < target) {
+                left = j + 1;
+            } else {
+                right = j - 1;
+            }
+        }
+        return -1;
+    }
 
 
     /**
@@ -88,11 +109,11 @@ class Solution215 {
     }*/
 
     /**
-     * 依然是优先队列的解法，只是将nums数组调整为堆
+     * 依然是优先队列的解法，只是将nums数组调整为堆而不使用标准的优先队列
      * <p>
      * 它的思路：我们也可以使用堆排序来解决这个问题——建立一个大根堆，做k-1次删除操作后堆顶元素就是我们要找的答案
      */
-    public int findKthLargest(int[] nums, int k) {
+/*    public int findKthLargest(int[] nums, int k) {
         int heapSize = nums.length;
         buildMaxHeap(nums, heapSize);
         for (int i = nums.length - 1; i >= nums.length - k + 1; --i) {
@@ -122,7 +143,7 @@ class Solution215 {
             swap(a, i, largest);
             maxHeapify(a, largest, heapSize);
         }
-    }
+    }*/
 
     public void swap(int[] a, int i, int j) {
         int temp = a[i];
