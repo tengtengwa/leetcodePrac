@@ -27,9 +27,12 @@ class Solution198 {
         } else if (len == 2) {
             return Math.max(nums[0], nums[1]);
         }
+        //只有一间房屋，只能偷这间
         dp[0] = nums[0];
+        //有两间房屋，因为不能偷相邻的房屋，所以选择两者之中较大的偷
         dp[1] = Math.max(nums[0], nums[1]);
         for (int i = 2; i < len; i++) {
+            //每个位置（房屋）有偷和不偷两种状态。偷了：dp[i]=dp[i - 2] + nums[i]，不偷：dp[i]=dp[i - 1]
             dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
         }
         return dp[len - 1];
