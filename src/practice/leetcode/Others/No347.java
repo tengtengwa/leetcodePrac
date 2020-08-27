@@ -59,7 +59,7 @@ class Solution347 {
         }
 
         //不能使用int数组，因为每个频率可能出现多个元素
-        List<Integer>[] lists = new List[nums.length + 1];
+        List<Integer>[] lists = new List[nums.length + 1];  //开长度+1大小的数组是为了防止类似([1],1)这个例子数组越界
         for (int key : map.keySet()) {
             int i = map.get(key);       //i为元素key出现的频率，将其作为数组下标
             if (lists[i] == null) {
@@ -70,14 +70,14 @@ class Solution347 {
 
         int[] ans = new int[k];
         int index = 0;
+        //注意lists数组末元素索引为len
         for (int i = nums.length; i >= 0; i--) {
             //此位置有元素再遍历这个频率的list
             if (lists[i] != null) {
                 for (int a : lists[i]) {
                     //当输出数组中元素小于k时才将此频率的数存入
                     if (index < k) {
-                        ans[index] = a;
-                        index++;
+                        ans[index++] = a;
                     }
                 }
 
