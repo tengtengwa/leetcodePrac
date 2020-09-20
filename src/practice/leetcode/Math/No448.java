@@ -21,7 +21,7 @@ class Solution448 {
      * 第一次遍历记录出现的元素，第二次遍历将未出现过的元素加入集合。
      *
      * 时间：O(n)，空间O(n)
-     * 因为题目要求不使用额外空间
+     * 因为题目要求不使用额外空间，所以这种方法不行
      */
 /*    public List<Integer> findDisappearedNumbers(int[] nums) {
         List<Integer> ans = new LinkedList<>();
