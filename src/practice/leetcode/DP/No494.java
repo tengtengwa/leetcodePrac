@@ -44,10 +44,8 @@ class Solution494 {
         int[] dp = new int[subSum + 1];     //多开一个元素，下标直接对应
         dp[0] = 1;
         for (int num : nums) {     //外层循环遍历数组中每个元素
-            for (int j = subSum; j >= 0; j--) { //内层循环更新dp数组中，注意！这里只能逆序遍历，因为之前的i-num状态已经被新状态覆盖
-                if (dp[j] != 0 && j + num <= subSum) {
-                    dp[j + num] += dp[j];
-                }
+            for (int j = subSum; j >= num; j--) { //内层循环更新dp数组中，注意！这里只能逆序遍历，因为之前的i-num状态已经被新状态覆盖
+                dp[j] = Math.max(dp[j], dp[j - num] + dp[j]);
             }
         }
         /*
