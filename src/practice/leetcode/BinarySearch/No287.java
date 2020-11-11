@@ -26,7 +26,7 @@ class Solution287 {
      * 时间：O(nlogn)，二分法的时间复杂度为O(logN)，在二分法的内部，执行了一次for循环，时间复杂度为O(N)，故时间复杂度为O(NlogN)。
      * 空间：O(1)
      */
-/*    public int findDuplicate(int[] nums) {
+    public int findDuplicate(int[] nums) {
         int len = nums.length;
         //题目条件为：数组中元素在[1,n]之间，这里查找的范围[left,right]也就是[1,n]
         int left = 1;
@@ -53,7 +53,7 @@ class Solution287 {
             }
         }
         return left;
-    }*/
+    }
 
 
     /**
@@ -64,7 +64,7 @@ class Solution287 {
      *
      * 时间：O(n)，时间：O(1)
      */
-    public int findDuplicate(int[] nums) {
+/*    public int findDuplicate(int[] nums) {
         int slow = 0, fast = nums[0];
         while (slow != fast) {  //slow、fast都表示当前节点，所以这里和下面的条件直接判断它们是否相等即可
             slow = nums[slow];
@@ -78,5 +78,5 @@ class Solution287 {
             fast = nums[fast];
         }
         return slow;
-    }
+    }*/
 }
