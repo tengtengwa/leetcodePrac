@@ -27,6 +27,7 @@ public class quickSort {
         }
         arr[left] = arr[i];
         arr[i] = tem;
+
         sort(arr, left, i - 1);
         sort(arr, i + 1, right);
     }
