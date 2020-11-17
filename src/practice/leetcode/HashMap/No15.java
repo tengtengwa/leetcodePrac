@@ -12,71 +12,59 @@ public class No15 {
 }
 
 class Solution15 {
-/*    public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> ans = new ArrayList();
-        int len = nums.length;
-        if(nums == null || len < 3) return ans;
-        Arrays.sort(nums); // 排序
-        for (int i = 0; i < len ; i++) {
-            if(nums[i] > 0) break; // 如果当前数字大于0，则三数之和一定大于0，所以结束循环
-            if(i > 0 && nums[i] == nums[i-1]) continue; // 去重
-            int L = i+1;
-            int R = len-1;
-            while(L < R){
-                int sum = nums[i] + nums[L] + nums[R];
-                if(sum == 0){
-                    ans.add(Arrays.asList(nums[i],nums[L],nums[R]));
-                    while (L<R && nums[L] == nums[L+1]) L++; // 去重
-                    while (L<R && nums[R] == nums[R-1]) R--; // 去重
-                    L++;
-                    R--;
-                }
-                else if (sum < 0) L++;
-                else if (sum > 0) R--;
-            }
-        }
-        return ans;
-    }*/
+    /**
+     * 题目：三数之和。
+     * 给你一个包含 n 个整数的数组nums，判断nums中是否存在三个元素 a，b，c ，使得a + b + c = 0 ？
+     * 请你找出所有满足条件且不重复的三元组。
+     * 注意：要进行去重，也就是不能出现三个顺序不一样的答案。
+     */
 
+    /**
+     * 解法一：暴力三重循环
+     * 时间：O(n^3)
+     */
+
+    /**
+     * 解法二：排序+双指针
+     * 思路：外层循环枚举第一个数，内层循环通过双指针并行枚举第二个和第三个数。
+     *
+     * 时间：O(N^2)
+     * 空间复杂度：O(logN)。我们忽略存储答案的空间，额外的排序的空间复杂度为O(logN)。然而我们修改了输入的数组nums，
+     * 在实际情况下不一定允许，因此也可以看成使用了一个额外的数组存储了nums的副本并进行排序，空间复杂度为O(N)。
+     */
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> lists = new ArrayList<>();
-        if (nums == null || nums.length < 3) {
-            return lists;
+        List<List<Integer>> ans = new ArrayList<>();
+        int len = nums.length;
+        if (len < 3) {
+            return ans;
         }
         Arrays.sort(nums);
-        for (int i = 0; i < nums.length - 2; i++) {
-            //如果最小的数字都大于0，则三数之和一定大于0，所以直接结束
+        for (int i = 0; i < len - 2; i++) {     //最外层循环枚举第一个数
+            //如果排序后当前最小的数都大于所求的数，则后面无解，直接退出循环
             if (nums[i] > 0) {
                 break;
             }
-            //去重
-            if (i > 0 && nums[i] == nums[i - 1]) {
+            if (i > 0 && nums[i] == nums[i - 1]) {  //对第一个数去重
                 continue;
             }
-            int L = i + 1;
-            int R = nums.length - 1;
+            int L = i + 1, R = len - 1;
             while (L < R) {
                 int sum = nums[i] + nums[L] + nums[R];
                 if (sum == 0) {
-                    lists.add(Arrays.asList(nums[i], nums[L], nums[R]));
-                    //当 sum == 0 时，nums[L] == nums[L+1]时 则会导致结果重复，应该跳过
-                    while (L < R && nums[L] == nums[L + 1]) {
-                        L++;
-                    }
-                    //当 sum == 0 时，nums[R] == nums[R-1]时 则会导致结果重复，应该跳过
-                    while (L < R && nums[R] == nums[R - 1]) {
-                        R--;
-                    }
+                    ans.add(Arrays.asList(nums[i], nums[L], nums[R]));
+                    //下面两行为对第二个和第三个数去重
+                    while (L < R && nums[L] == nums[L + 1]) L++;
+                    while (L < R && nums[R] == nums[R - 1]) R--;
+                    //上面将这个答案加入集合后应该移动左右指针，避免再次加入
                     L++;
                     R--;
-                } else if (sum > 0) {
-                    R--;
+                } else if (sum < 0) {
+                    L++;
                 } else {
-                    L++;
+                    R--;
                 }
             }
         }
-        return lists;
+        return ans;
     }
-
 }
