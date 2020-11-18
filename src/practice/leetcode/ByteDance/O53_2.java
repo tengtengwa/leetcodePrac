@@ -1,4 +1,4 @@
-package practice.leetcode.leetcodeOffer;
+package practice.leetcode.ByteDance;
 
 public class O53_2 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package practice.leetcode.leetcodeOffer;
+package practice.leetcode.ByteDance.LinkedList;
 
 
 import java.util.LinkedList;

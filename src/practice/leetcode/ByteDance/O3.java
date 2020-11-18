@@ -1,6 +1,5 @@
-package practice.leetcode.leetcodeOffer;
+package practice.leetcode.ByteDance;
 
-import java.util.Arrays;
 import java.util.HashSet;
 
 public class O3 {

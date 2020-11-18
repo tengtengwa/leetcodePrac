@@ -1,4 +1,4 @@
-package practice.leetcode.ByteDance;
+package practice.leetcode.ByteDance.String;
 
 import java.util.HashMap;
 import java.util.Map;
