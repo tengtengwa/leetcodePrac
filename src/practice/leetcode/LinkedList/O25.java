@@ -1,4 +1,4 @@
-package practice.leetcode.ByteDance.LinkedList;
+package practice.leetcode.LinkedList;
 
 public class O25 {
     public static void main(String[] args) {

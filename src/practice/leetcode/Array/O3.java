@@ -1,4 +1,4 @@
-package practice.leetcode.ByteDance;
+package practice.leetcode.Array;
 
 import java.util.HashSet;
 

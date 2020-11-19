@@ -1,4 +1,4 @@
-package practice.leetcode.ByteDance.LinkedList;
+package practice.leetcode.LinkedList;
 
 
 import java.util.LinkedList;
@@ -70,14 +70,5 @@ class SolutionO6 {
             arr[i] = stack.pollLast();
         }
         return arr;
-    }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int val) {
-        this.val = val;
     }
 }

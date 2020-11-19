@@ -1,7 +1,4 @@
-package practice.leetcode.ByteDance.String;
-
-import java.util.Deque;
-import java.util.LinkedList;
+package practice.leetcode.String;
 
 public class String6 {
     public static void main(String[] args) {

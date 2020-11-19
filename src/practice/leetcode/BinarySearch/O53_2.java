@@ -1,4 +1,4 @@
-package practice.leetcode.ByteDance;
+package practice.leetcode.BinarySearch;
 
 public class O53_2 {
     public static void main(String[] args) {

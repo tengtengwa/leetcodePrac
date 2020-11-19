@@ -1,4 +1,4 @@
-package practice.leetcode.ByteDance.String;
+package practice.leetcode.String;
 
 import java.util.LinkedList;
 import java.util.List;
