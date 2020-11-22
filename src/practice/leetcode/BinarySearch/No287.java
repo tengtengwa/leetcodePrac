@@ -79,4 +79,21 @@ class Solution287 {
         }
         return slow;
     }*/
+
+
+    /**
+     * 桶排序解法。因为题目要求空间为O(1)，因此此解法不满足要求。
+     *
+     * 时间、空间：O(n)
+     */
+/*    public int findDuplicate(int[] nums) {
+        int[] arr = new int[nums.length];
+        for (int num : nums) {
+            arr[num]++;
+            if (arr[num] > 1) {
+                return num;
+            }
+        }
+        return -1;
+    }*/
 }
