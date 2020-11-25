@@ -44,10 +44,11 @@ class Solution145 {
     }*/
 
     /**
-     * 解法二：迭代
+     * 解法二：迭代。
+     * 这种方式就是按照正宗的后序遍历来的：左-右-根
      * 时间、空间：O(n)，空间平均O(logn)，最坏为链表的情况，为O(n)
      */
-    public List<Integer> postorderTraversal(TreeNode root) {
+/*    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> ans = new LinkedList<>();
         if (root == null) {
             return ans;
@@ -72,5 +73,24 @@ class Solution145 {
             }
         }
         return ans;
+    }*/
+
+
+    /**
+     * 解法三：先序遍历实现后序遍历结果
+     * 思路：因为先序遍历和后序遍历的结果刚好相反，因此我们可以进行先序遍历，但不是将结果加入列表表尾，而是加入表头。
+     */
+    public List<Integer> postorderTraversal(TreeNode root) {
+        LinkedList<Integer> result = new LinkedList<>();
+        if (root == null) return result;
+        Deque<TreeNode> stack = new LinkedList<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            root = stack.pop();
+            result.offerFirst(root.val);
+            if (root.left != null) stack.push(root.left);
+            if (root.right != null) stack.push(root.right);
+        }
+        return result;
     }
 }
