@@ -39,7 +39,7 @@ class Solution145 {
             return;
         }
         dfs(cur.left, ans);
-        dfs((cur.right), ans);
+        dfs(cur.right, ans);
         ans.add(cur.val);
     }*/
 
@@ -77,13 +77,14 @@ class Solution145 {
 
 
     /**
-     * 解法三：先序遍历实现后序遍历结果
-     * 思路：因为先序遍历和后序遍历的结果刚好相反，因此我们可以进行先序遍历，但不是将结果加入列表表尾，而是加入表头。
+     * 解法三：先序遍历（迭代法）实现后序遍历结果
+     * 思路：因此我们可以进行先序遍历（根-左-右），使用栈来暂存左右子节点将其遍历顺序交换（根-右-左）。但不是将结果加入列表表尾，
+     * 而是加入表头（左-右-根）。
      */
     public List<Integer> postorderTraversal(TreeNode root) {
         LinkedList<Integer> result = new LinkedList<>();
         if (root == null) return result;
-        Deque<TreeNode> stack = new LinkedList<>();
+        Deque<TreeNode> stack = new LinkedList<>();     //注意，这里必须使用栈来暂存左右子节点
         stack.push(root);
         while (!stack.isEmpty()) {
             root = stack.pop();
