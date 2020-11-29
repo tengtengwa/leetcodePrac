@@ -2,6 +2,9 @@
 /target
 /.idea
 /out
+/src/others
+
+
 *.iml
 
 #±àÒëÎÄ¼ş
@@ -13,7 +16,6 @@
 *.zip
 *.rar
 *.tar.gz
-#*.class
 *.json
 .metadata
 .vs
