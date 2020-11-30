@@ -62,7 +62,7 @@ class Solution145 {
             }
             //从上面while循环中出来，就说明当前节点没有左子节点了
             cur = stack.pop();
-            //pre节点的作用就是在从右子节点返回当前节点时，防止再次走向右子节点
+            //下面判断是否能向右子节点走。pre节点的作用就是在从右子节点返回当前节点时，防止再次走向右子节点
             if (cur.right == null || cur.right == pre) {
                 ans.add(cur.val);
                 pre = cur;
