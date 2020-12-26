@@ -1,22 +1,31 @@
 package practice.leetcode.StackAndQueue;
 
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Random;
-
 public class No215 {
     public static void main(String[] args) {
         Solution215 s = new Solution215();
-        s.findKthLargest(new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4);
+        s.findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2);
     }
 }
 
 class Solution215 {
 
     /**
-     * 题目：数组中第k个最大元素，这类题目基本上都是快速选择和构造堆的解法
-     *
-     * 解法一：快速选择（快排思想）
+     * 题目：数组中第k个最大元素。
+     * 注意，是排序后第k个最大的元素，而不是第k个不同元素！！！
+     */
+
+    /**
+     * 解法一：排序
+     * 思路：对数组排序后，第len-k个元素就是第k个最大的元素
+     * 时间、空间：O(nlogn)
+     */
+/*    public int findKthLargest(int[] nums, int k) {
+        Arrays.sort(nums);
+        return nums[nums.length - k];
+    }*/
+
+    /**
+     * 解法二：快速选择（快排思想）
      * 思路：数组中第k个最大元素的索引是target（len-k），我们每次对数组进行partition操作，通过交换使得基准数左边的元素都小于它，右边的元素
      * 都大于它（升序），然后对左右两边进行递归操作。进行一次partition操作返回的索引表示该位置的元素已经被放置在最终的位置上了，
      * 因此可以通过partition操作返回的索引来判断target是否是要找的元素。
@@ -27,7 +36,7 @@ class Solution215 {
      * 时间复杂度：O(n)
      * 空间复杂度：O(logn)，递归使用栈空间的空间代价的期望为O(logn)。
      */
-/*    public int findKthLargest(int[] nums, int k) {
+    public int findKthLargest(int[] nums, int k) {
         int left = 0, right = nums.length - 1;
         int target = nums.length - k;
 
@@ -35,8 +44,10 @@ class Solution215 {
             int index = partition(nums, left, right);
             if (index > target) {
                 right = index - 1;
+                //不能这么写：index = partition(nums, left, index - 1); 因为这样并没有改变right的值
             } else if (index < target) {
                 left = index + 1;
+                //同样不能这么写：index = partition(nums, index + 1, right); 因为没有改变left的值
             } else {
                 return nums[target];     //注意，返回的是target位置的数
             }
@@ -45,11 +56,12 @@ class Solution215 {
 
     private int partition(int[] nums, int left, int right) {
         //当数组基本有序时，就会沦为冒泡排序，所以基准数的选择也很重要
-//        int tem = (left + right) / 2;
-        if (right > left) {
-            int tem = left + 1 + new Random().nextInt(right - left);    //nextInt参数为负数时抛出异常
-            swap(nums, left, tem);
-        }
+        int tem = (left + right) >>> 1;
+        swap(nums, left, tem);
+//        if (right > left) {
+//            int tem = left + 1 + new Random().nextInt(right - left);    //nextInt参数为负数时抛出异常
+//            swap(nums, left, tem);
+//        }
         int pivot = nums[left];
 
         int j = left;           //j指向基准数pivot当前待交换的位置
@@ -62,10 +74,12 @@ class Solution215 {
         swap(nums, j, left);
         return j;
     }
-*/
 
 
-    public int findKthLargest(int[] nums, int k) {
+    /**
+     * 思路和上面的类似，只是写法上有些不同
+     */
+/*    public int findKthLargest(int[] nums, int k) {
         int left = 0, right = nums.length - 1, target = nums.length - k;
         while (left <= right) {     //防止只有一个元素
             int tem = (right + left) / 2;
@@ -88,11 +102,11 @@ class Solution215 {
             }
         }
         return -1;
-    }
+    }*/
 
 
     /**
-     * 解法二：优先队列，也就是构造最大/小堆
+     * 解法三：优先队列，也就是构造最大/小堆
      */
 /*    public int findKthLargest(int[] nums, int k) {
         int len = nums.length;
@@ -144,7 +158,6 @@ class Solution215 {
             maxHeapify(a, largest, heapSize);
         }
     }*/
-
     public void swap(int[] a, int i, int j) {
         int temp = a[i];
         a[i] = a[j];
