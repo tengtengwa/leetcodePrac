@@ -25,7 +25,7 @@ class LRUCache {
      * 解法二：使用一个双向链表和一个HashMap来实现LinkedHashMap的功能，注意将增删节点的方法抽出来即可。
      * 双向链表不自己实现，使用一个LinkedList应该也可以
      */
-    class DLinkedList {
+    static class DLinkedList {
         private int key;
         private int value;
         DLinkedList pre, next;
