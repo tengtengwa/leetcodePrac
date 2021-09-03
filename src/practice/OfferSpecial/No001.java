@@ -1,4 +1,4 @@
-package OfferSpecial;
+package practice.OfferSpecial;
 
 public class No001 {
     public static void main(String[] args) {
