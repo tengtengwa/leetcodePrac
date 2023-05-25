@@ -4,10 +4,10 @@ import java.util.Random;
 
 public class SortAlgorithm {
     public static void main(String[] args) {
-        int[] arr = new int[]{2, 3, 4, 1, 6, 3, 2, 8, 9};
+        int[] arr = new int[]{2, 3, 8, 9, 4, 1, 6, 3, 2};
 //        quickSort(arr, 0, arr.length - 1);
 //        selectSort(arr);
-        insertSort(arr);
+        optimizedBubbleSort(arr);
         for (int num : arr) {
             System.out.print(num + " ");
         }
@@ -20,7 +20,7 @@ public class SortAlgorithm {
      * 平均时间：O(nlogn)、最坏时间：O(n^2)
      * 空间：O(nlogn)，因为用的是递归，所以复杂度和栈的深度有关。
      */
-/*    private static void quickSort(int[] arr, int left, int right) {
+    private static void quickSort(int[] arr, int left, int right) {
         if (left < right) {
             int mid = (left + right) >>> 1;
 //            int rand = left + new Random().nextInt(right - left);   //也可以取随机数，但是注意从[left,right]这个范围来取
@@ -45,12 +45,15 @@ public class SortAlgorithm {
             quickSort(arr, left, low - 1);
             quickSort(arr, low + 1, right);
         }
-    }*/
+    }
 
     private static void swap(int[] arr, int i, int j) {
-        int tem = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tem;
+//        int tem = arr[i];
+//        arr[i] = arr[j];
+//        arr[j] = tem;
+        arr[i] ^= arr[j];
+        arr[j] ^= arr[i];
+        arr[i] ^= arr[j];
     }
 
 
@@ -61,7 +64,7 @@ public class SortAlgorithm {
      * <p>
      * 时间：O(n^2)，空间：O(1)
      */
-/*    private static void selectSort(int[] arr) {
+    private static void selectSort(int[] arr) {
         int len = arr.length;
         for (int i = 0; i < len - 1; i++) {
             int tem = arr[i];           //tem记录i之后最小的数
@@ -77,7 +80,7 @@ public class SortAlgorithm {
                 arr[i] = tem;
             }
         }
-    }*/
+    }
 
 
     /**
@@ -100,4 +103,58 @@ public class SortAlgorithm {
         }
     }
 
+    /**
+     * 冒泡排序
+     * 思想：外层循环每次将本轮中一个最大（小）的数交换到本轮最后一个位置，内层循环每次比较相邻元素。也就是说外层循环每次将一个元素归位，
+     * 下一轮循环在剩下的元素继续冒泡，直到将所有元素排序。
+     *
+     * 关于稳定性：稳定。因为在比较的过程中，当两个相同大小的元素相邻，只比较大或者小，所以相等的时候是不会交换位置的。
+     * 而当两个相等元素离着比较远的时候，也只是会把他们交换到相邻的位置。他们的位置前后关系不会发生任何变化，所以算法是稳定的。
+     *
+     * 时间复杂度：O(n^2)
+     */
+    public static void bubbleSort(int[] array) {
+        if (array == null || array.length < 2) {
+            return;
+        }
+
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - 1 - i; j++) {
+                if (array[j] > array[j + 1]) {
+                    swap(array, j, j + 1);
+                }
+            }
+        }
+    }
+
+    /**
+     * 冒泡排序优化
+     */
+    public static void optimizedBubbleSort(int[] array) {
+        if (array == null || array.length < 2) {
+            return;
+        }
+
+        boolean flag = true;
+        int position = 0;
+        int curInternalIndex = array.length - 1;
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < curInternalIndex; j++) {    //注意这里j的最大下标是上一层内循环中更新的下标j（也就是curInternalIndex）
+                if (array[j] > array[j + 1]) {
+                    swap(array, j, j + 1);
+                    flag = false;
+                    //二重优化：内层循环中记录最后一次交换时元素的下标，因为后面的元素都已经有序并归位了，因此下一次内层循环直接在0~j这个范围即可
+                    position = j;
+                }
+            }
+            //一重优化：通过一个标记位来判断本轮是否有元素交换（本轮循环中所有元素是否已经有序）
+            //如果本轮循环中所有元素已经有序，则说明整个数组已经有序
+            if (flag) {
+                break;
+            } else {
+                flag = true;
+                curInternalIndex = position;
+            }
+        }
+    }
 }
