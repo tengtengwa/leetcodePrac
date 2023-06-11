@@ -7,7 +7,7 @@ import java.util.List;
  * BuilderÄ£Ê½£¨Java°æ£©
  */
 
-public class Builder {
+class Builder {
     public static void main(String[] args) {
         OKClient client = new OKClient.Builder()
                 .setDNS("666")
@@ -16,7 +16,7 @@ public class Builder {
     }
 }
 
-class OKClient {
+public class OKClient {
 
     final String dns;
     final List<String> interpreters;
