@@ -3,7 +3,8 @@
 /.idea
 /out
 /src/others
-
+.idea
+.idea/libraries
 
 *.iml
 
