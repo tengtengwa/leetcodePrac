@@ -1,9 +1,6 @@
 package practice.leetcode.SlidingWindow;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 public class No239 {
     public static void main(String[] args) {
@@ -41,38 +38,39 @@ class Solution239 {
     /**
      * 解法二：使用一个双端队列维护一个递减元素的下标，注意是下标
      * <p>
-     * 思路：在遍历的过程中，动态维护这个存储递减元素的下标的队列：加入下标前，去除队尾所有小于当前位置元素的下标；加入下标后，如果窗口长度
-     * 大于k，就将队首一个元素移除。每次向输出数组加入的元素就是当前队首下标对应的元素。
+     * 思路：在遍历的过程中，动态维护这个存储递减元素的下标的队列
+     * 1、加入下标前，去除队尾所有小于当前位置元素的下标；
+     * 2、如果队列中最大值已经不在当前窗口中，直接移除队首元素
+     * 每次经过以上操作后，队首元素就是当前窗口最大值的下标，每次向输出数组加入的元素就是当前队首下标对应的元素。
      * <p>
      * 时间：O(N)（for循环中的while循环是常数级的），空间：O(N)
      */
-/*    public int[] maxSlidingWindow(int[] nums, int k) {
+    public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums.length <= 1 || k <= 1) {
             return nums;
         }
-        //注意，这里只能声明成LinkedList，不能使用多态。因为下面要把LinkedList作为双端队列使用，而List中没有LinkedList的一些方法
-        //再有一点，双端队列中存储的是元素的下标
-        LinkedList<Integer> list = new LinkedList<>();
+        //注意：双端队列中存储的是元素的下标
+        Deque<Integer> list = new LinkedList<>();
         int[] ans = new int[nums.length - k + 1];
 
         for (int i = 0; i < nums.length; i++) {
             //加入一个元素的下标前，将队列尾部<=当前[元素]的所有下标移除。注意！比较的是元素
             while (!list.isEmpty() && nums[list.peekLast()] <= nums[i]) {
-                list.pollLast();        //不要使用poll和add方法，使用pollFirst、pollLast、addFirst、addLast等替代
+                list.pollLast();
             }
-            //检查以后加入当前下标
+            //检查以后加入当前元素下标
             list.add(i);
-            //窗口长度超过k就要将队首元素移除
-            if (list.peek() + k <= i) {
+            //如果队列中最大值已经不在当前窗口中，直接移除队首元素
+            if (list.peek() <= i - k) {
                 list.pollFirst();
             }
             //从第k个元素开始，向输出数组中添加答案
             if (i + 1 - k >= 0) {
-                ans[i - k + 1] = nums[list.peek()];
+                ans[i - k + 1] = nums[list.peek()]; //注意队中的元素是下标，这里要去取元素
             }
         }
         return ans;
-    }*/
+    }
 
 
     /**
@@ -83,27 +81,27 @@ class Solution239 {
      *
      * 时间：O(n)（最差是降序的情况，复杂度为kn，k为常数，还是O(n)），空间：O(N)
      */
-    public int[] maxSlidingWindow(int[] nums, int k) {
-        int[] ans = new int[nums.length - k + 1];
-        int maxIndex = -1;
-        int j = 0;
-        for (int i = 0; i <= nums.length - k; i++) {
-            //滑动窗口的范围为[i,i+k-1]，判断最大元素的下标maxIndex是否在这个范围中
-            if (i <= maxIndex && maxIndex <= i + k - 1) {
-                //因为if-else语句的上半句一定会在下面else语句执行后的下一次循环执行，所以这里比较窗口最右边的那个新元素和窗口中的最大元素
-                if (nums[maxIndex] <= nums[i + k - 1]) {   //如果窗口最右边的元素大于当前最大元素，就更新最大元素下标
-                    maxIndex = i + k - 1;
-                }
-            } else {
-                //最大元素下标不在[i,i+k-1]范围中，在此范围寻找最大元素下标并更新
-                maxIndex = i;
-                for (int m = i; m <= i + k - 1; m++) {  //注意m的范围[i,i+k-1]
-                    if (nums[maxIndex] < nums[m])
-                        maxIndex = m;
-                }
-            }
-            ans[j++] = nums[maxIndex];
-        }
-        return ans;
-    }
+//    public int[] maxSlidingWindow(int[] nums, int k) {
+//        int[] ans = new int[nums.length - k + 1];
+//        int maxIndex = -1;
+//        int j = 0;
+//        for (int i = 0; i <= nums.length - k; i++) {
+//            //滑动窗口的范围为[i,i+k-1]，判断最大元素的下标maxIndex是否在这个范围中
+//            if (i <= maxIndex && maxIndex <= i + k - 1) {
+//                //因为if-else语句的上半句一定会在下面else语句执行后的下一次循环执行，所以这里比较窗口最右边的那个新元素和窗口中的最大元素
+//                if (nums[maxIndex] <= nums[i + k - 1]) {   //如果窗口最右边的元素大于当前最大元素，就更新最大元素下标
+//                    maxIndex = i + k - 1;
+//                }
+//            } else {
+//                //最大元素下标不在[i,i+k-1]范围中，在此范围寻找最大元素下标并更新
+//                maxIndex = i;
+//                for (int m = i; m <= i + k - 1; m++) {  //注意m的范围[i,i+k-1]
+//                    if (nums[maxIndex] < nums[m])
+//                        maxIndex = m;
+//                }
+//            }
+//            ans[j++] = nums[maxIndex];
+//        }
+//        return ans;
+//    }
 }
