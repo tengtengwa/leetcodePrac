@@ -1,4 +1,4 @@
-package practice.leetcode.DP;
+package practice.leetcode.DynamicProgramming;
 
 public class No63 {
     public static void main(String[] args) {

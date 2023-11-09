@@ -1,6 +1,4 @@
-package practice.leetcode.DP;
-
-import java.util.Stack;
+package practice.leetcode.DynamicProgramming;
 
 public class No32 {
     public static void main(String[] args) {

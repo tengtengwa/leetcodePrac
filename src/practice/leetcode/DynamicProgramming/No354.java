@@ -1,4 +1,4 @@
-package practice.leetcode.DP;
+package practice.leetcode.DynamicProgramming;
 
 import java.util.*;
 

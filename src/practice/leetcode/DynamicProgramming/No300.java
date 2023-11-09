@@ -1,6 +1,4 @@
-package practice.leetcode.DP;
-
-import java.util.Arrays;
+package practice.leetcode.DynamicProgramming;
 
 public class No300 {
     public static void main(String[] args) {

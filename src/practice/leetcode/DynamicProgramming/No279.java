@@ -1,6 +1,4 @@
-package practice.leetcode.DP;
-
-import java.util.*;
+package practice.leetcode.DynamicProgramming;
 
 public class No279 {
     public static void main(String[] args) {
