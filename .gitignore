@@ -4,6 +4,7 @@
 /out
 .idea
 .idea/libraries
+.DS_Store
 
 *.iml
 
