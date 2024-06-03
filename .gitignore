@@ -5,6 +5,9 @@
 /src/others
 .idea
 .idea/libraries
+.DS_Store
+src/.DS_Store
+src/practice/.DS_Store
 
 *.iml
 
