@@ -1,24 +1,28 @@
 import kotlin.random.Random
 
+/**
+ * UTF-8ç¼–ç 
+ */
+
 fun main() {
-    val n = 2 // Éú³Én×éºÅÂë
-    println("Éú³ÉµÄ´óÀÖÍ¸ºÅÂë£º")
+    val n = 3 // ç”Ÿæˆnç»„å·ç 
+    println("ç”Ÿæˆçš„å¤§ä¹é€å·ç ï¼š")
     for (i in 1..n) {
-        println("µÚ${i}×é£º${generateLotteryNumbers(35, 5, 12, 2)}")
+        println("ç¬¬${i}ç»„ï¼š${generateLotteryNumbers(35, 5, 12, 2)}")
     }
 
-    println("\nÉú³ÉµÄË«É«ÇòºÅÂë£º")
+    println("\nç”Ÿæˆçš„åŒè‰²çƒå·ç ï¼š")
     for (i in 1..n) {
-        println("µÚ${i}×é£º${generateLotteryNumbers(33, 6, 16, 1)}")
+        println("ç¬¬${i}ç»„ï¼š${generateLotteryNumbers(33, 6, 16, 1)}")
     }
 }
 
 /**
- * Éú³ÉÒ»×é´óÀÖÍ¸/Ë«É«ÇòºÅÂë
- * @param totalReds     ºìÇò×ÜÊı
- * @param redsToPick    Ñ¡ÔñºìÇòµÄÊıÁ¿
- * @param totalBlues    À¶Çò×ÜÊı
- * @param bluesToPick   Ñ¡ÔñÀ¶ÇòµÄÊıÁ¿
+ * ç”Ÿæˆä¸€ç»„å¤§ä¹é€/åŒè‰²çƒå·ç 
+ * @param totalReds     çº¢çƒæ€»æ•°
+ * @param redsToPick    é€‰æ‹©çº¢çƒçš„æ•°é‡
+ * @param totalBlues    è“çƒæ€»æ•°
+ * @param bluesToPick   é€‰æ‹©è“çƒçš„æ•°é‡
  */
 fun generateLotteryNumbers(totalReds: Int, redsToPick: Int, totalBlues: Int, bluesToPick: Int): String {
     val reds = (1..totalReds).toMutableList()
@@ -27,21 +31,21 @@ fun generateLotteryNumbers(totalReds: Int, redsToPick: Int, totalBlues: Int, blu
     val pickedReds = mutableListOf<Int>()
     val pickedBlues = mutableListOf<Int>()
 
-    // Ëæ»úÑ¡ÔñºìÇò
+    // éšæœºé€‰æ‹©çº¢çƒ
     repeat(redsToPick) {
         pickedReds.add(reds.removeAt(Random.nextInt(reds.size)))
     }
     pickedReds.sort()
 
-    // Ëæ»úÑ¡ÔñÀ¶Çò
+    // éšæœºé€‰æ‹©è“çƒ
     repeat(bluesToPick) {
         pickedBlues.add(blues.removeAt(Random.nextInt(blues.size)))
     }
     pickedBlues.sort()
 
-    // ½«Ñ¡ÖĞµÄºÅÂë×ª»»Îª×Ö·û´®
+    // å°†é€‰ä¸­çš„å·ç è½¬æ¢ä¸ºå­—ç¬¦ä¸²
     val redsString = pickedReds.joinToString(separator = ", ")
     val bluesString = pickedBlues.joinToString(separator = ", ")
 
-    return "ºìÇò£º$redsString À¶Çò£º$bluesString"
+    return "çº¢çƒï¼š$redsString è“çƒï¼š$bluesString"
 }
